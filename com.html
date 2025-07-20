@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMUS - User Complaints (Admin)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e0f2f7, #d1c4e9);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+        }
+
+        .admin-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 1152px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 48px 24px;
+            transition: all 0.5s ease-out;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: -0.025em;
+            color: #0d9488;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 16px;
+        }
+
+        .complaint-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .complaint-item {
+            background-color: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 16px;
+        }
+
+        .complaint-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .complaint-item p {
+            color: #4b5563;
+            margin-bottom: 8px;
+        }
+
+        .complaint-item .complaint-details {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .complaint-item .detail-item {
+            margin-bottom: 8px;
+        }
+
+        .detail-item strong {
+            font-weight: 600;
+            color: #1f2937;
+            margin-right: 8px;
+        }
+
+        footer {
+            margin-top: 64px;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-container">
+        <header>
+            <div class="logo">
+                <h1>DOMUS</h1>
+            </div>
+            <h2>User Complaints</h2>
+        </header>
+
+        <ul class="complaint-list" id="complaintList">
+            </ul>
+
+        <footer>
+            <p>&copy; 2023 DOMUS. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sample data - replace with your actual data fetching logic
+        const complaints = [
+            {
+                fullName: "John Doe",
+                flatNumber: "A-101",
+                complaintType: "Plumbing",
+                complaintDescription: "Leaky faucet in the bathroom."
+            },
+            {
+                fullName: "Jane Smith",
+                flatNumber: "B-205",
+                complaintType: "Electricity",
+                complaintDescription: "Power outage in the living room."
+            },
+            // Add more complaint objects here
+        ];
+
+        const complaintList = document.getElementById('complaintList');
+
+        complaints.forEach(complaint => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('complaint-item');
+
+            listItem.innerHTML = `
+                <h3>New Complaint</h3>
+                <div class="complaint-details">
+                    <p class="detail-item"><strong>Full Name:</strong> ${complaint.fullName}</p>
+                    <p class="detail-item"><strong>Flat Number:</strong> ${complaint.flatNumber}</p>
+                    <p class="detail-item"><strong>Complaint Type:</strong> ${complaint.complaintType}</p>
+                    <p class="detail-item"><strong>Complaint Description:</strong> ${complaint.complaintDescription}</p>
+                </div>
+            `;
+            complaintList.appendChild(listItem);
+        });
+    </script>
+</body>
+
+</html>

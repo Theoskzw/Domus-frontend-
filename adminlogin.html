@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domus - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f2f7, #d1c4e9); /* Gradient background */
+            color: #333;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1ABC9C;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Increased shadow for depth */
+            width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+        }
+
+        .login-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-container h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #2C3E50;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .login-container input {
+            width: calc(100% - 20px);
+            padding: 14px; /* Increased padding */
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px; /* Rounded corners */
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-container input:focus {
+            outline: none;
+            border-color: #1ABC9C;
+        }
+
+        .login-container button {
+            background-color: #1ABC9C;
+            color: white;
+            padding: 14px 28px; /* Increased padding */
+            border: none;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            width: 100%;
+        }
+
+        .login-container button:hover {
+            background-color: #16A085;
+            transform: scale(1.03);
+        }
+
+        .login-container .signup-link {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .login-container .signup-link a {
+            color: #1ABC9C;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .login-container .signup-link a:hover {
+            text-decoration: underline;
+            color: #16A085;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">DOM<span>US</span></div>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <input type="text" placeholder="Username" id="username">
+        <input type="password" placeholder="Password" id="password">
+        <button onclick="login()">Login</button>
+        <div class="signup-link">
+            Don't have an account? <a href="#">Sign up</a>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+
+            if (username && password) {
+                alert('Login successful!');
+            } else {
+                alert('Please enter username and password.');
+            }
+        }
+    </script>
+</body>
+</html>
